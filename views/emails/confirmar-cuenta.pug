@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        style 
+            include ./email.css
+            
+    body 
+        h2 Activar Cuenta de usuario en Sistema Tareas  
+        p Hola, para activar tu cuenta de usuario, haz click en el siguiente enlace.
+        a(href=`${confirmarUrl}`) Ir a Enlace (aqui!!) Activar Cuenta 
+        p Sino puedes acceder al enlace, Visita #{confirmarUrl}
+        p Sino solicitaste este correo, puedes ignorarlo..

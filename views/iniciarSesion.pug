@@ -1,0 +1,28 @@
+doctype html
+html(lang="en")
+    head
+        include partials/header
+    body.login 
+        .contenedor-formulario 
+            h1 Iniciar Sesión
+            
+            if locals.mensajes
+                .alertas 
+                    each categoria in Object.keys(locals.mensajes)
+                        each error in mensajes[categoria]
+                            .alerta(class=`${categoria}`) 
+                                p=error
+            form#formulario.caja.caja-login(method="POST" action="/iniciar-sesion")
+                .campo 
+                    label(for="email") Correo
+                    input(type="email" name="email" value= email placeholder="Ingresa tu correo" autocomplete="off" require)
+                .campo
+                    label(for="password") Contraseña
+                    input(type="password" name="password" value= password placeholder="Ingresa tu contraseña" require autocomplete="off")
+                .campo.enviar 
+                    input.boton(type="submit" value="Iniciar Sesion")
+                .campo.acciones 
+                    //a(href="/crear-cuenta") Crear Cuenta de usuario
+
+                    a(href="/reestablecer") Olvidaste tu Contraseña?
+        script(src="/dist/bundle.js") 
